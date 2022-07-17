@@ -1,0 +1,85 @@
+[
+  {
+    "menuID": "9",
+    "menuName": "Home",
+    "indexOrder": "1",
+    "image": "http://matka.flomiz.com/SystemImages/icon/Home.png",
+    "url": "0",
+    "isRedirect": "1",
+    "redirectScreen": "0",
+    "isBrowser": "0",
+    "subMenuList": []
+  },
+  {
+    "menuID": "1",
+    "menuName": "Game Rates",
+    "indexOrder": "2",
+    "image": "http://matka.flomiz.com/SystemImages/icon/GameResult.png",
+    "url": "0",
+    "isRedirect": "1",
+    "redirectScreen": "GameRatesScreen",
+    "isBrowser": "0",
+    "subMenuList": [
+    ]
+  },
+  {
+    "menuID": "31",
+    "menuName": "Game History",
+    "indexOrder": "2",
+    "image": "http://matka.flomiz.com/SystemImages/icon/GameHistory.png",
+    "url": "0",
+    "isRedirect": "1",
+    "redirectScreen": "GameHistoryScreen",
+    "isBrowser": "0",
+    "subMenuList": [
+    ]
+  },
+  {
+    "menuID": "2",
+    "menuName": "Chart",
+    "indexOrder": "2",
+    "image": "http://matka.flomiz.com/SystemImages/icon/Chart.png",
+    "url": "0",
+    "isRedirect": "1",
+    "redirectScreen": "Chart",
+    "isBrowser": "0",
+    "subMenuList": [
+    ]
+  },
+
+  {
+    "menuID": "10",
+    "menuName": "Terms Of Use",
+    "image": "http://matka.flomiz.com/SystemImages/icon/TermsOfUse.png",
+    "url": "matka.flomiz.com/TermsofUse.aspx",
+    "isRedirect": "1",
+    "redirectScreen": "TermsOfUse",
+    "isBrowser": "0",
+    "subMenuList": []
+  },
+  {
+    "menuID": "7",
+    "menuName": "Share",
+    "menuNameGujarati": "ગોપનીયતા નીતિ",
+    "indexOrder": "13",
+    "image": "http://matka.flomiz.com/SystemImages/icon/Share.png",
+    "url": "http://student.intstu.com/privacy",
+    "isRedirect": "1",
+    "redirectScreen": "Share",
+    "isBrowser": "0",
+    "subMenuList": []
+  },
+  {
+    "menuID": "8",
+    "menuName": "Logout",
+    "menuNameGujarati": "લૉગ આઉટ",
+    "indexOrder": "15",
+    "image": "http://matka.flomiz.com/SystemImages/icon/Logout.png",
+    "url": "0",
+    "isRedirect": "1",
+    "redirectScreen": "100",
+    "isBrowser": "0",
+    "subMenuList": []
+  }
+]
+
