@@ -325,7 +325,7 @@ class _GameDetailScreenState extends State<GameDetailScreen> {
                             callService();
                         }
                         else{
-                          CU.showToast(context, "Sorry Game Time Closed"+available.toString());
+                          CU.showToast(context, "Sorry Game Time Closed");
 
                         }
                       },

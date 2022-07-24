@@ -192,7 +192,11 @@ class MainScreenState extends State<MainScreen> {
   Future<void> callService() async {
     Map<String, dynamic> body = <String, dynamic>{};
     SharedPreferences prefs=await SharedPreferences.getInstance();
-  var mno=prefs.getString("mno");
+    var mno="0";
+    if(prefs.containsKey("mno")){
+      mno=prefs.getString("mno");
+    }
+
     if (await CU.CheckInternet()) {
       resJson = await ApiClient.Call(context, body: body, apiUrl: CS.homeScreen+mno, isShowPogressDilog: true, callMethod: CallMethod.Get);
     } else {

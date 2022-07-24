@@ -630,13 +630,14 @@ class CU {
       title:Title=="Profile"?Text(
         "Profile ",
         style: new TextStyle(color: Colors.white, fontSize: 17),
-      ):MainScreenState.resJson["walletamount"]!=null?Row(children: [Expanded(flex:3,child:Text(
+      ):
+      MainScreenState.resJson!=null?MainScreenState.resJson["walletamount"]!=null?Row(children: [Expanded(flex:3,child:Text(
           Title,
           style: new TextStyle(color: Colors.white)),
       ),Expanded(flex:2,child: Text(
         "Points : " + MainScreenState.resJson["walletamount"].toString(),
         style: new TextStyle(color: Colors.white, fontSize: 10),
-      ),)],):CircularProgressIndicator(), /*new Text(
+      ),)],):CircularProgressIndicator():Text(Title), /*new Text(
         Title,
         style: new TextStyle(color: Colors.white),
       ),*/

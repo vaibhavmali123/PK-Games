@@ -221,26 +221,30 @@ class HomeScreenState extends State<HomeScreen> {
         bool available;
         DateTime openTime=DateTime.parse(dateFormat.parse(Cell["opentimeValue"].toString(),false).toString());
         DateTime closeTime=DateTime.parse(dateFormat.parse(Cell["closetimeValue"].toString(),false).toString());
-        DateTime dateTimeNow=DateTime.now();
 
+        // DateTime openTime=DateTime.parse("2022-07-16 21:16:00");
+        //DateTime closeTime=DateTime.parse("2022-07-17 13:02:00");
+
+        DateTime dateTimeNow=DateTime.now();
+        if(dateTimeNow.isAfter(closeTime.subtract(Duration(minutes: 30)))){
+          setState(() {
+            available=true;
+          });
+          Navigator.push(context
+              , MaterialPageRoute(builder: (BuildContext context) => GameTypeScreen(Cell,available: available,)));
+
+        }
+        else{
+            setState(() {
+              available=true;
+            });
+
+          Navigator.push(context
+              , MaterialPageRoute(builder: (BuildContext context) => GameTypeScreen(Cell,available: available,)));
+        }
         log("DATE opentimeValue"+Cell["opentimeValue"].toString());
         log("DATE closetimeValue"+Cell["closetimeValue"].toString());
 
-        if(dateTimeNow.isAfter(closeTime)|| dateTimeNow.isBefore(openTime)){
-          setState(() {
-            available=false;
-
-          });
-        }
-        else{
-          setState(() {
-            available=true;
-
-          });
-        }
-
-        Navigator.push(context
-         , MaterialPageRoute(builder: (BuildContext context) => GameTypeScreen(Cell,available: available,)));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -264,7 +268,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(0.0),
                               child: Text(Cell[CS.gamename] ?? "",
                                 //textAlign: TextAlign.center,
                                 style: TextStyle(color: Colors.brown, fontSize: 20, fontWeight: FontWeight.bold),
