@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:matka/Screen.dart';
 import 'package:matka/modal/ClientPaymentModal.dart';
 import 'package:matka/navigation/screens/MainScreen.dart';
 import 'package:matka/navigation/widget/EditingController.dart';
@@ -13,6 +15,9 @@ import 'package:matka/util/CS.dart';
 import 'package:matka/util/CU.dart';
 import 'package:matka/util/Enum.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:upi_india/upi_india.dart';
+
+import '../../PaymentScreen.dart';
 
 class AddBalanceScreen extends StatefulWidget {
   @override
@@ -27,9 +32,20 @@ class _AddBalanceScreenState extends State<AddBalanceScreen> {
   EditingController mobileController = EditingController();
 List<String>items=["Seelect Payment Type","Cheque","Netbanking","UPI"];
 var selected;
+  List<UpiApp> apps;
+  UpiIndia _upiIndia = UpiIndia();
+
   @override
   void initState() {
+    _upiIndia.getAllUpiApps(mandatoryTransactionId: false).then((value) {
+      setState(() {
+        apps = value;
+      });
+    }).catchError((e) {
+      apps = [];
+    });
     super.initState();
+
   }
 
   @override
@@ -117,7 +133,24 @@ var selected;
                       color: Colors.blue,
                       child: Text('Add Balance'),
                       onPressed: () {
-                        if (IsValidate()) callService();
+                        log("ffff"+IsValidate().toString());
+                        if(IsValidate()==false){
+                          CU.showToast(context,"All fields are mandatory");
+                          log("ffff  if "+IsValidate().toString());
+
+                        }
+                        else{
+                          log("ffff  else "+IsValidate().toString());
+
+                          Navigator.push(context
+                              , MaterialPageRoute(builder: (BuildContext context) => HomePage(amt:amountController.text)));
+                        }
+
+                        /*Navigator.push(context
+                            , MaterialPageRoute(builder: (BuildContext context) => Screen()));
+*/
+                        // initiateTransaction(u);
+                       // if (IsValidate()) callService();
                       },
                     )),
               ],

@@ -33,14 +33,14 @@ dependencies:
   device_info:
   esys_flutter_share:
   cached_network_image:
-  firebase_messaging:
+  #firebase_messaging:
   #  firebase_messaging:
   #    git:
   #      url: https://github.com/MaikuB/flutterfire.git
   #      path: packages/firebase_messaging
-  flutter_local_notifications:
-  firebase_analytics:
-  firebase_crashlytics:
+  #flutter_local_notifications:
+  #firebase_analytics:
+  #firebase_crashlytics:
   #  carousel_slider:
   #  http: ^0.12.0+2
   pin_code_text_field:
@@ -57,6 +57,7 @@ dependencies:
   store_redirect:
   readmore:
   dio:
+  upi_india:
   expandable:
   flutter_zoom_drawer:
   polygon_clipper:

@@ -6,7 +6,6 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:matka/navigation/screens/ChartScreen.dart';
 import 'package:matka/navigation/screens/HomeScreen.dart';
 import 'package:matka/navigation/screens/ProfileScreen.dart';
@@ -39,7 +38,6 @@ class MainScreenState extends State<MainScreen> {
   PackageInfo packageInfo;
   List<Widget> drawerOptions = new List<Widget>();
   static int _selectedDrawerFragmentIndex = 0;
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
